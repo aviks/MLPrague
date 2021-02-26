@@ -45,7 +45,7 @@ sum(a)
 #%%
 
 using BenchmarkTools
-
+using Libdl 
 # #  1. The C language
 #
 # C is often considered the gold standard: difficult on the human, nice for the machine. Getting within a factor of 2 of C is often satisfying. Nonetheless, even within C, there are many kinds of optimizations possible that a naive C writer may or may not get the advantage of.

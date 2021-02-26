@@ -36,7 +36,7 @@ apples[1:1, :]
 #%%
 
 x_apples  = [ [apples[i, :red], apples[i, :blue]] for i in 1:size(apples, 1) ]
-
+x_apples
 # Similarly, let's create arrays called `x_bananas` and `x_grapes`:
 
 
@@ -67,7 +67,7 @@ model = Dense(2, 3, σ)
 loss(x, y) = Flux.mse(model(x), y)
 opt = Descent()
 data = shuffle!(collect(zip(xs, ys)))
-Flux.train!(loss, params(model), data, opt)
+Flux.train!(loss, Flux.params(model), data, opt)
 
 
 

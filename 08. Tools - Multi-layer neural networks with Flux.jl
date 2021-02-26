@@ -68,7 +68,7 @@ xs = vcat(x_apples, x_bananas, x_grapes);
 
 labels = [ones(length(x_apples)); 2*ones(length(x_bananas)); 3*ones(length(x_grapes))];
 
-ys = [onehot(label, 1:3) for label in labels];  # onehotbatch(labels, 1:3)
+ys = [Flux.onehot(label, 1:3) for label in labels];  # onehotbatch(labels, 1:3)
 
 # The input data is in `xs` and the one-hot vectors are in `ys`.
 
@@ -124,7 +124,7 @@ model.layers[1].W
 
 model.layers[1].b
 
-params(model)
+Flux.params(model)
 #%%
 
 # ## Training the model

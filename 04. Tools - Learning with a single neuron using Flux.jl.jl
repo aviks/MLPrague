@@ -21,7 +21,8 @@ bananas = DataFrame(CSV.File("data/bananas.dat", delim='\t', normalizenames=true
 
 x_apples  = [ [row.red, row.green] for row in eachrow(apples)]
 x_bananas = [ [row.red, row.green] for row in eachrow(bananas)]
-
+x_apples
+x_bananas
 xs = vcat(x_apples, x_bananas)
 
 ys = vcat(fill(0, size(x_apples)), fill(1, size(x_bananas)))
@@ -45,9 +46,10 @@ using Flux
 # ### Making a single neuron in Flux
 
 model = Dense(2, 1, σ)
+Flux.params(model)
 loss(x, y) = Flux.mse(model(x), y)
 opt = Descent()
-Flux.train!(loss, params(model), shuffle!(collect(zip(xs, ys))), opt)
+Flux.train!(loss, Flux.params(model), shuffle!(collect(zip(xs, ys))), opt)
 
 using Plots
 scatter(first.(xs), last.(xs), group=ys, xlabel="mean red", ylabel="mean green")

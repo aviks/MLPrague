@@ -14,7 +14,7 @@
 #
 # The idea of using vectors is that different directions in the space of outputs encode information about different types of inputs.
 
-
+load("data/fruit-salad.png")
 #%%
 
 # Now we extend our previous model to give multiple outputs by repeating it with different weights. For the first element of the array we'd use:
@@ -81,13 +81,13 @@
 # Previously we worked with a single neuron, which we visualized as
 #
 # <img src="data/single-neuron.png" alt="Drawing" style="width: 300px;"/>
-#
+load("data/single-neuron.png")
 # where we have two pieces of data (green) coming into a single neuron (pink) that returned a single output. We could use this single output to do binary classification - to identify an image of a fruit as `1`, meaning banana or as `0`, meaning not a banana (or an apple).
 #
 # To do non-binary classification, we can use a layer of neurons, which we can visualize as
 #
 # <img src="data/single-layer.png" alt="Drawing" style="width: 300px;"/>
-#
+load("data/single-layer.png")
 # We now have stacked a bunch of neurons on top of each other to hopefully work together and train to output results of more complicated features. 
 #
 # We still have two input pieces of data, but now have several neurons, each of which produces an output for a given binary classification: 

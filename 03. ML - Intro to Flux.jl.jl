@@ -26,7 +26,7 @@ using Flux
 # Importantly, `Flux` allows us to *automatically create neurons* with the **`Dense`** function. For example, in the last notebook, we were looking at a neuron with 2 inputs and 1 output:
 #
 #  <img src="data/single-neuron.png" alt="Drawing" style="width: 500px;"/>
-#
+load("data/single-neuron.png")
 #  We could create a neuron with two inputs and one output via
 
 
@@ -43,12 +43,12 @@ model.b
 
 #%%
 
-typeof(model.W)
+typeof(model)
 
 # Perhaps most nicely, we can _evaluate_ this model for a given input just by using it like a function:
 
 
-model([1,2])
+model([6,10])
 
 # Can you reproduce its output?
 
@@ -59,8 +59,14 @@ model([1,2])
 
 
 f(x) = 3x^2 + 2x + 1;
+function h(x)
+    return  3x^2 + 2x + 1
+end
+h(10)
+f(10)
 ∂f(x) = 6x + 2
-gradient(f, 4)
+∂f(5)
+gradient(f, 5)
 
 # Or with two arguments simultaneously:
 
@@ -74,8 +80,7 @@ gradient(f, 5, 6)
 #%%
 
 # Other helpful built-in functionality include other common (even if simple) utilities
-# used in machine learning tasks, like other activation and cost functions. This
-# includes the cost function that we've used in previous notebooks -
+# used in machine learning tasks, like other activation and cost functions. 
 #
 # $$L(w, b) = \sum_i \left[y_i - f(x_i, w, b) \right]^2$$
 #

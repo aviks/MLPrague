@@ -31,7 +31,7 @@ banana = load("data/104_100.jpg")
 #%%
 
 # <img src="data/array2d.png" alt="attachment:array2d.png" width="500"/>
-
+#load("data/array2d.png")
 
 #%%
 
@@ -59,7 +59,7 @@ size(a)
 # We can grab the datum stored in the box at row `i` and column `j` by *indexing* using square brackets: `[i, j]`. For example, let's get the pixel (piece of the image) in box $(40, 60)$, i.e. in the 40th row and 60th column of the image:
 
 
-apple
+apple[40,60]
 
 #%%
 
@@ -67,7 +67,7 @@ dump(apple[40, 60])
 
 #%%
 
-apple[18:20,29:31]
+apple[18:20,60:80]
 
 # We see that Julia displays a coloured box! Julia, via the `Colors.jl` package, is clever enough to display colours in a way that is useful to us humans!
 #
@@ -82,8 +82,11 @@ apple[18:20,29:31]
 #
 # For example, we can pull out the `red` value using the function `red` applied to the color. Since internally the actual value is stored in a special format, we choose to convert it to a standard floating-point number using the `Float64` function:
 
+typeof(red(apple[40,60]))
 
-Float64(red(apple[40, 60]))
+b = Float64(red(apple[40, 60]))
+
+typeof(b)
 
 #%%
 
